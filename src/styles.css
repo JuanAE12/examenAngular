@@ -1,1 +1,144 @@
-/* You can add global styles to this file, and also import other style files */
+/*estilo general*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+footer {
+    margin-top: 20px;
+    background-color: #dadada;
+}
+
+header{
+    width: 100%;
+    height: 50px;
+    background: #313845;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.contenedor{
+    width: 95%;
+    margin: auto;
+}
+
+h1{
+    float: left;
+}
+
+header .contenedor{
+    display: table;
+}
+
+section {
+    width: 100%;
+}
+
+#bienvenidos {
+    text-align: center;
+    margin-top: 25px;
+}
+
+
+footer .contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 25px;
+    padding-top: 25px;
+}
+
+.copy {
+    font-size: 20px;
+    width: 370px;
+}
+
+
+
+/*responsive para ordenador*/
+@media (min-width:1024px) {
+    .contenedor {
+        width: 1200px;
+    }
+}
+
+/*responsive para tablet*/
+@media (min-width:768px){
+    .sociales {
+        width: auto;
+    }
+    
+    footer .contenedor {
+        justify-content: space-between;
+    }
+}
+
+/*estilos del menu*/
+#menu-bar{
+    display: none;
+}
+
+header label {
+    float: right;
+    font-size: 28px;
+    margin: 6px 0;
+    cursor: pointer;
+}
+
+.menu{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #313845;
+    transition: all 0.5s;
+    transform: translateX(-100%);
+}
+
+.menu a{
+    display: block;
+    color: #fff;
+    height: 50px;
+    text-decoration: none;
+    padding: 15px;
+    border-bottom: 1px solid #5a677e;
+}
+
+.menu a:hover{ 
+    background: rgba(255,255,255,0.3);
+}
+
+#menu-bar:checked ~ .menu {
+    transform: translateX(0%);
+}
+
+@media(min-width:1024px){
+    .menu {
+        position: static;
+        width: auto;
+        height: auto;
+        transform: translateX(0%);
+        float: right;
+        display: flex;
+    }
+    
+    .menu a {
+        border: none;
+    }
+    
+    header label {
+        display: none;
+    }
+}

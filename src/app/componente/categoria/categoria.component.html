@@ -1,0 +1,53 @@
+
+<section *ngIf="sw==true;" id="categoria">
+    <h2>Categorias:</h2>
+    <div class="contenedor">
+    <div class="margen" *ngFor = "let p of listaCategoria">
+        <div class="card" style="width: 18rem;" style="background-color:#bec5e0;">
+            <img class="card-img-top" src={{p.strCategoryThumb}} alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{p.strCategory}}</h5>
+                <!--<p class="card-text">{{p.strCategoryDescription}}</p>-->
+                <a href="#" class="btn btn-primary" (click)="verRecetas(p.strCategory)">Ver recetas</a>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<section *ngIf="swComida==true;" id="categoria">
+    <h2>Recetas:</h2>
+    <a href="#" class="btn btn-primary" (click)="atrasCategoria()">Ir a categoria</a>
+    <div class="contenedor">
+    <div class="margen" *ngFor = "let p of resultadoCategoria">
+        <div class="card mb-3">
+            <img class="card-img-top" src={{p.strMealThumb}} alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{p.strMeal}}</h5>
+              <!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+              <p class="card-text"><small class="text-muted">Codigo # {{p.idMeal}}</small></p>
+              <a href="#" class="btn btn-primary" (click)="verDetalles(p.idMeal)">Ver detalles</a>
+            </div>
+            
+        </div>
+    </div>
+    </div>
+</section>
+
+<section *ngIf="swDetalle==true;" id="categoria">
+    <div *ngFor = "let p of resultadoDetalle">
+        <div class="card mb-3">
+            <div align="center"><img class="card-img-top" src={{p.strMealThumb}} alt="Card image cap"></div>
+            <div class="card-body">
+              <h5 class="card-title">Receta: {{p.strMeal}}</h5>
+              <p class="card-text">Instrucciones: {{p.strInstructions}}</p>
+              <p class="card-text">Bebida alternativa: {{p.strDrinkAlternative}}</p>
+              <p class="card-text"><small>Código: {{p.idMeal}}</small></p>
+              <p class="card-text"><small>País: {{p.strArea}}</small></p>
+              <p class="card-text"><small>Categoria: {{p.strCategory}}</small></p>
+            </div>
+            
+          </div>
+          <a href="#" class="btn btn-primary" (click)="atrasReceta()">Atras</a>
+    </div>
+</section>

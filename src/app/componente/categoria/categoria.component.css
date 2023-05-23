@@ -1,0 +1,40 @@
+/*Autor: Martinez Ticona Juan de Dios Abad*/
+/*Hoja de estilos para la parte de todos los cursos que hay*/
+#categoria .margen {
+    margin-top: 20px;
+    margin-right: 15px;
+}
+
+#categoria h3, h4 {
+    text-align: center;
+}
+
+#categoria h3 {
+    margin-top: 25px;
+}
+
+#categoria .contenedor {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#categoria article {
+    margin: 25px;
+}
+
+#categoria img {
+    width: 100%;
+    max-width: 280px;
+}
+
+#categoria p {
+    /*width: auto;*/
+    color: black;
+    text-decoration: solid;
+    display: block;
+}
+
+#imagenReceta {
+    text-align: center;
+}
